@@ -6,10 +6,10 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import App from './components/App'
 import reducers from './reducers'
-
+import Async from './middlewares/async'
 import './styles/screen.scss'
 
-const createStoreWithMiddleware = applyMiddleware()(createStore)
+const createStoreWithMiddleware = applyMiddleware(Async)(createStore)
 
 const root = document.getElementById('root')
 
